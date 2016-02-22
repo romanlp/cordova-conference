@@ -1,0 +1,35 @@
+<ons-navigator var="app.navi">
+  <ons-page ng-controller="techController as ctrl">
+
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="app.menu.toggleMenu()"><ons-icon icon="fa-bars"></ons-icon></ons-toolbar-button>
+    </div>
+    <div class="center">Technique</div>
+  </ons-toolbar>
+
+  <ons-list>
+    <ons-list-item>
+      <div class="prop-desc">
+        Model : {{device.model}}
+      </div>
+    </ons-list-item>
+    <ons-list-item>
+      <div class="prop-desc">
+        Platform : {{device.platform}}
+      </div>
+    </ons-list-item>
+    <ons-list-item>
+      <div class="prop-desc">
+        Version : {{device.version}}
+      </div>
+    </ons-list-item>
+    <ons-list-item>
+      <div class="prop-desc">
+        Manufacturer : {{device.manufacturer}}
+      </div>
+    </ons-list-item>
+</ons-list>
+
+</ons-page>
+</ons-navigator>

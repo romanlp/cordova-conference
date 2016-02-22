@@ -1,0 +1,28 @@
+<ons-page ng-controller="aboutController as ctrl">
+
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="app.menu.toggleMenu()"><ons-icon icon="fa-bars"></ons-icon></ons-toolbar-button>
+    </div>
+    <div class="center">A propos</div>
+  </ons-toolbar>
+  <div class="about">
+    <h1>Conference</h1>
+
+    <h2>Version</h2>
+    <p>
+      {{version}}
+    </p>
+
+    <h2>Description</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <h2>Liens</h2>
+    <div class="buttons">
+      <button class="button button--outline" ng-click="openGithub()"><i class="fa fa-github"></i></button>
+    </div>
+  </div>
+
+</ons-page>

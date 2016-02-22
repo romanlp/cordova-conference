@@ -1,0 +1,53 @@
+<ons-page ng-controller="noteController as ctrl">
+  <ons-toolbar>
+    <div class="left"><ons-back-button>Back</ons-back-button></div>
+    <div class="center">Profile</div>
+    <div class="right">
+      <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+
+  <div class="profile-card">
+    <div class="profile-name">{{session.title}}</div>
+    <div class="profile-desc">
+      <span ng-repeat="s in session.speakers">@{{s}} </span>
+    </div>
+
+  </div>
+
+  <div class="buttons media">
+    <button class="button button--outline" ng-click="takePicture()"><i class="fa fa-camera-retro"></i></ons-button>
+    <button class="button button--outline" ng-click="selectPicture()"><i class="fa fa-file-image-o"></i></ons-button>
+    <button class="button button--outline" ng-click="captureAudio()"><i class="fa fa-microphone"></i></ons-button>
+    <button class="button button--outline" ng-click="captureVideo()"><i class="fa fa-video-camera"></i></ons-button>
+  </div>
+
+  <div class="buttons">
+    <button class="button button--large" ng-click="saveNote()">Enregistrer</button>
+  </div>
+
+  <div>
+    <textarea ng-model="note" class="textarea" style="width: 100%" placeholder="Textarea">
+    </textarea>
+  </div>
+
+  <h2>Images</h2>
+  <div ng-repeat="image in images">
+    <img ng-src="{{image}}" ng-click="showActions(image)">
+  </div>
+
+  <h2>Vidéos</h2>
+  <div ng-repeat="video in videos">
+    <video width="320" height="240" controls>
+      <source src="{{video}}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <h2>Audios</h2>
+  <div ng-repeat="audio in audios">
+    <audio controls src="{{audio}}">
+    </audio>
+  </div>
+
+</ons-page>

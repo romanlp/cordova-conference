@@ -1,0 +1,28 @@
+<ons-navigator var="app.navi">
+  <ons-page ng-controller="speakersController as ctrl">
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button ng-click="app.menu.toggleMenu()"><ons-icon icon="fa-bars"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">Présentateurs</div>
+    </ons-toolbar>
+
+    <ons-list ng-repeat="speaker in speakers">
+      <ons-list-item  class="list-item-container" modifier="tapable chevron"
+      ng-click="ctrl.openDetail(speaker)" ng-show="type===session.type">
+      <div class="list-item-left">
+        <img src="data/images/{{speaker.image}}" class="avator">
+      </div>
+      <div class="list-item-right">
+        <div class="list-item-content">
+          <div class="name">
+            {{speaker.firstname}} {{speaker.lastname}}
+            <span class="lucent">@{{speaker.id}}</span>
+          </div>
+          <span class="desc" ng-bind-html="renderHtml(speaker.about)"></span>
+        </div>
+      </div>
+    </ons-list-item>
+  </ons-list>
+</ons-page>
+</ons-navigator>

@@ -1,0 +1,22 @@
+<ons-navigator var="app.navi">
+  <ons-page ng-controller="sessionsController as ctrl">
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="app.menu.toggleMenu()"><ons-icon icon="fa-bars"></ons-icon></ons-toolbar-button>
+    </div>
+    <div class="center">Sessions</div>
+  </ons-toolbar>
+  
+  <ons-list ng-repeat="(type, name) in categories">
+    <ons-list-header>{{name}}</ons-list-header>
+    <div ng-repeat="session in sessions">
+      <ons-list-item  modifier="tapable chevron"
+                      ng-click="ctrl.openDetail(session)"
+                      ng-show="type===session.type">
+
+        <span ng-if="session.fav"><i class="fa fa-heart"></i> - </span>{{session.title}}
+      </ons-list-item>
+    </div>
+  </ons-list>
+</ons-page>
+</ons-navigator>

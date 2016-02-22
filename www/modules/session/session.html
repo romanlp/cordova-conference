@@ -1,0 +1,42 @@
+<ons-page ng-controller="sessionController as ctrl">
+  <ons-toolbar>
+    <div class="left"><ons-back-button>Back</ons-back-button></div>
+    <div class="center">Profile</div>
+    <div class="right">
+      <ons-toolbar-button>
+        <ons-icon icon="fa {{isFavoris()}}" ng-click="setFavoris()" style="vertical-align: -4px; font-size: 28px;"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+
+  <div class="profile-card">
+    <div class="profile-name">{{session.title}}</div>
+    <div class="profile-desc">
+      <span ng-repeat="s in session.speakers">@{{s}} </span>
+    </div>
+    <div class="rating">
+      <span ng-click="setNote(1)"><i class="fa {{getNote(1)}}"></i></span>
+      <span ng-click="setNote(2)"><i class="fa {{getNote(2)}}"></i></span>
+      <span ng-click="setNote(3)"><i class="fa {{getNote(3)}}"></i></span>
+      <span ng-click="setNote(4)"><i class="fa {{getNote(4)}}"></i></span>
+      <span ng-click="setNote(5)"><i class="fa {{getNote(5)}}"></i></span>
+   </div>
+  </div>
+  <div class="buttons">
+    <a href="#" class="button button--large" ng-click="ctrl.openNote()">Voir les notes</a>
+  </div>
+  <ons-list modifier="inset" style="margin-top: 10px">
+        <ons-list-item modifier="chevron">
+          Salle : {{session.confRoom}}
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron">
+          Heure : {{session.hour}}
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron">
+          langue : {{session.lang}}
+        </ons-list-item>
+
+  </ons-list>
+</ons-page>

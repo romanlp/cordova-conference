@@ -1,0 +1,36 @@
+<ons-page ng-controller="agendaController as ctrl">
+  <ons-toolbar>
+    <div class="left"><ons-back-button>Back</ons-back-button></div>
+    <div class="center">Agenda</div>
+  </ons-toolbar>
+
+
+  <ons-list class="plan-list">
+         <ons-list-item modifier="chevron" class="plan" ng-repeat="session in sessions">
+           <ons-row>
+             <ons-col width="80px" class="plan-left">
+               <div class="plan-date">{{getHour(session.hour)}}</div>
+               <div class="plan-duration">{{getDuration(session.hour)}}</div>
+             </ons-col>
+
+             <ons-col width="6px" class="plan-center" ng-style="{backgroundColor:a % 3 == 1 ? '#3399ff' : '#ccc'}">
+             </ons-col>
+
+             <ons-col class="plan-right">
+               <div class="plan-name">{{session.title | limitTo:25}}</div>
+
+               <div class="plan-info">
+                 <div ng-hide="a % 4 == 0">
+                   <ons-icon icon="fa-twitter"></ons-icon>{{getSpeaker(session)}}
+                 </div>
+
+                 <div ng-hide="a % 3 == 0">
+                   <ons-icon icon="fa-map-marker"></ons-icon>{{session.confRoom}}
+                 </div>
+               </div>
+             </ons-col>
+           </ons-row>
+         </ons-list-item>
+
+       </ons-list>
+</ons-page>
