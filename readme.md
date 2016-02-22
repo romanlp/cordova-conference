@@ -1,4 +1,4 @@
-Roman LAPACHERIE
+#Conference - Roman LAPACHERIE
 
 ** Plugins **
 cordova-plugin-actionsheet 2.2.2 "ActionSheet"
